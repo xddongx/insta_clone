@@ -115,6 +115,10 @@ body {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+#header.on {
+    position: fixed;        /* 상단에 고정되서 같이 움직임 */
+}
+
 #header .inner {    /* inner 안에 컨텐츠를 넣으면 값이 들어옴 */
     width:975px;
     height: 77px;
@@ -122,6 +126,11 @@ body {
     display: flex;      /* 가로 배치 */
     justify-content: space-between;     /* x축 정렬_공간을 자동으로 분배함 */
     align-items:center;         /* y축 정렬 */
+    transition: all 1s;         /* 자연스러운 효과 */
+}
+
+#header.on .inner{
+    height: 52px;
 }
 
 #header .inner .logo > a {
@@ -145,6 +154,7 @@ body {
     position: absolute;     /* 부모를 기준으로 위치를 잡음 */
     right: -15px;
     top: -4px;
+    transition: all .5s;
 }
 
 #header .search_box{
@@ -199,7 +209,16 @@ body {
 
 #header .inner .logo div:nth-child(2){
     transform: translateY(2px);
+    transition: all .5s;
 }
+
+#header.on .inner .ogo .sprite_insta_icon:after{
+    opacity: 0;
+}
+
+#header.on .inner .logo div:nth-child(2){
+    opacity: 0;
+}   /* 아이콘 사라지게 하는 부분 */
 
 #main_container{
     padding-top: 130px;
@@ -287,6 +306,10 @@ body {
     cursor:pointer;         /* 누를 수 있도록 하기 위함 */
 }
 
+.heart_btn.on .sprite_heart_icon_outline{   /* on 클래스가 추가된 경우 이미지를 변경 */
+    background: url('../imgs/background01.png') no-repeat -26px -261px;
+}
+
 .contents .likes{
     padding: 5px 20px;
     color: #262626;
@@ -353,6 +376,11 @@ body {
     position: absolute;             /* 부모를 갖는 기준점을 잡지 않으면 꼭대기까지 올라감 */
     right: 0;
     top: 0;
+}
+
+.side_box.on {
+    position: fixed;
+    top: 80px;
 }
 
 .side_box .profile_thumb{

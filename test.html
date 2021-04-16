@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .box.on{
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // document.getElementsByClassName('box');
+        const box = document.querySelector('.box');
+        //const box = document.querySelectorAll('box');
+
+        box.addEventListener('click', function(){
+            console.log('click');
+            // box.style.background = 'blue';  //파랑색으로 색상 변경
+            // box.classList.add('on');
+            // box.classList.remove('on');
+            box.classList.toggle('on'); // 있으면 .on 클래스 제거, 없으면 .on 클래스 추가
+        })
+    </script>
+</body>
+</html>
